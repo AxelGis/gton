@@ -14,7 +14,7 @@ export async function buyToken(amount:number, address:string):Promise<number> {
     const gcdWei:Big = toWei(GCDAmount);
 
     const web3 = new Web3(window.ethereum);
-    const contract = new web3.eth.Contract(ERC20_ABI as AbiItem[], busdAddress);
+    const contract = new web3.eth.Contract(ERC20_ABI as AbiItem[], ogxtAddress);
     const userBalance:string = await contract.methods.balanceOf(address).call();
     const balance:Big = Big(userBalance);
 
